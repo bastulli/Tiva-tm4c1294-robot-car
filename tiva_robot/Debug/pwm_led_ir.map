@@ -1,0 +1,390 @@
+******************************************************************************
+                  TI ARM Linker PC v16.9.7                     
+******************************************************************************
+>> Linked Tue Jun 19 12:23:32 2018
+
+OUTPUT FILE NAME:   <pwm_led_ir.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00001d01
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  000024ec  000fdb14  R  X
+  SRAM                  20000000   00040000  0000021c  0003fde4  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000024ec   000024ec    r-x
+  00000000    00000000    00000208   00000208    r-- .intvecs
+  00000208    00000208    00001fa8   00001fa8    r-x .text
+  000021b0    000021b0    00000318   00000318    r-- .const
+  000024c8    000024c8    00000024   00000024    r-- .cinit
+20000000    20000000    0000021c   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    0000001c   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000208     
+                  00000000    00000208     tm4c1294ncpdt_startup_ccs.obj (.intvecs)
+
+.text      0    00000208    00001fa8     
+                  00000208    000009ac     rtsv7M4_T_le_v4SPD16_eabi.lib : e_pow.obj (.text)
+                  00000bb4    00000458     main.obj (.text)
+                  0000100c    00000200     driverlib.lib : sysctl.obj (.text:SysCtlClockFreqSet)
+                  0000120c    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.obj (.text)
+                  000013c2    00000002                                   : mpu_init.obj (.text)
+                  000013c4    00000170                                   : e_sqrt.obj (.text)
+                  00001534    00000136                                   : fd_div_t2.obj (.text)
+                  0000166a    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  0000179c    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.obj (.text)
+                  00001898    000000fc                                   : s_scalbn.obj (.text)
+                  00001994    0000009c                                   : memcpy_t2.obj (.text)
+                  00001a30    00000086                                   : fd_cmp_t2.obj (.text:__aeabi_cdcmple)
+                  00001ab6    00000086                                   : fd_cmp_t2.obj (.text:__aeabi_cdrcmple)
+                  00001b3c    0000007a     driverlib.lib : adc.obj (.text:ADCSequenceStepConfigure)
+                  00001bb6    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : startup.obj (.text)
+                  00001bb8    00000070                                   : autoinit.obj (.text)
+                  00001c28    0000006e                                   : fd_tos_t2.obj (.text)
+                  00001c96    00000068                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  00001cfe    00000002     --HOLE-- [fill = 0]
+                  00001d00    00000054                                   : boot.obj (.text)
+                  00001d54    00000054                                   : exit.obj (.text)
+                  00001da8    00000050     driverlib.lib : adc.obj (.text:ADCSequenceConfigure)
+                  00001df8    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00001e44    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  00001e8c    00000048                   : sysctl.obj (.text:_SysCtlFrequencyGet)
+                  00001ed4    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.obj (.text)
+                  00001f1c    00000038                                   : fs_tod_t2.obj (.text)
+                  00001f54    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00001f88    0000002e     rtsv7M4_T_le_v4SPD16_eabi.lib : i_tofd_t2.obj (.text)
+                  00001fb6    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  00001fe0    00000022                   : pwm.obj (.text:PWMGenConfigure)
+                  00002002    00000002     --HOLE-- [fill = 0]
+                  00002004    00000020                   : sysctl.obj (.text:_SysCtlMemTimingGet)
+                  00002024    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : u_tofd_t2.obj (.text)
+                  00002044    0000001e     driverlib.lib : adc.obj (.text:ADCSequenceDataGet)
+                  00002062    0000001e                   : pwm.obj (.text:PWMPulseWidthSet)
+                  00002080    00000018                   : adc.obj (.text:ADCProcessorTrigger)
+                  00002098    00000018                   : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  000020b0    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  000020c8    00000014     driverlib.lib : pwm.obj (.text:PWMClockSet)
+                  000020dc    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  000020f0    00000014                                   : s_copysign.obj (.text)
+                  00002104    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeADC)
+                  00002116    00000012                   : gpio.obj (.text:GPIOPinTypeGPIOInput)
+                  00002128    00000012                   : gpio.obj (.text:GPIOPinTypePWM)
+                  0000213a    00000012                   : pwm.obj (.text:PWMOutputState)
+                  0000214c    00000010                   : pwm.obj (.text:PWMGenPeriodSet)
+                  0000215c    0000000e                   : adc.obj (.text:ADCSequenceEnable)
+                  0000216a    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00002178    0000000c     driverlib.lib : pwm.obj (.text:PWMGenEnable)
+                  00002184    0000000c     tm4c1294ncpdt_startup_ccs.obj (.text)
+                  00002190    0000000a     driverlib.lib : adc.obj (.text:ADCIntClear)
+                  0000219a    00000006                   : gpio.obj (.text:GPIOPinRead)
+                  000021a0    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  000021a6    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  000021ac    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.obj (.text)
+
+.const     0    000021b0    00000318     
+                  000021b0    000001b0     driverlib.lib : sysctl.obj (.const:g_pppui32XTALtoVCO)
+                  00002360    00000090                   : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  000023f0    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  0000245c    00000004     --HOLE-- [fill = 0]
+                  00002460    00000030     rtsv7M4_T_le_v4SPD16_eabi.lib : e_pow.obj (.const:$O1$$)
+                  00002490    00000030     driverlib.lib : sysctl.obj (.const:g_sXTALtoMEMTIM)
+                  000024c0    00000008                   : sysctl.obj (.const)
+
+.cinit     0    000024c8    00000024     
+                  000024c8    00000011     (.cinit..data.load) [load image, compression = lzss]
+                  000024d9    00000003     --HOLE-- [fill = 0]
+                  000024dc    00000008     (__TI_handler_table)
+                  000024e4    00000008     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000200     --HOLE--
+
+.data      0    20000200    0000001c     UNINITIALIZED
+                  20000200    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
+                  2000020c    00000008                                   : _lock.obj (.data:$O1$$)
+                  20000214    00000004                                   : errno.obj (.data)
+                  20000218    00000004                                   : stkdepth_vars.obj (.data)
+
+MODULE SUMMARY
+
+       Module                          code   ro data   rw data
+       ------                          ----   -------   -------
+    .\
+       main.obj                        1112   0         0      
+       tm4c1294ncpdt_startup_ccs.obj   12     520       0      
+    +--+-------------------------------+------+---------+---------+
+       Total:                          1124   520       0      
+                                                               
+    C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib
+       sysctl.obj                      674    596       0      
+       gpio.obj                        510    144       0      
+       adc.obj                         280    0         0      
+       pwm.obj                         130    0         0      
+    +--+-------------------------------+------+---------+---------+
+       Total:                          1594   740       0      
+                                                               
+    C:\ti\ccsv7\tools\compiler\ti-cgt-arm_16.9.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       e_pow.obj                       2476   48        0      
+       fd_add_t2.obj                   438    0         0      
+       e_sqrt.obj                      368    0         0      
+       fd_div_t2.obj                   310    0         0      
+       fd_cmp_t2.obj                   268    0         0      
+       fd_mul_t2.obj                   252    0         0      
+       s_scalbn.obj                    252    0         0      
+       memcpy_t2.obj                   156    0         0      
+       autoinit.obj                    112    0         0      
+       fd_tos_t2.obj                   110    0         0      
+       copy_decompress_lzss.obj        104    0         0      
+       exit.obj                        84     0         12     
+       boot.obj                        84     0         0      
+       cpy_tbl.obj                     76     0         0      
+       fd_toi_t2.obj                   72     0         0      
+       fs_tod_t2.obj                   56     0         0      
+       i_tofd_t2.obj                   46     0         0      
+       u_tofd_t2.obj                   32     0         0      
+       _lock.obj                       20     0         8      
+       args_main.obj                   24     0         0      
+       s_copysign.obj                  20     0         0      
+       copy_decompress_none.obj        14     0         0      
+       errno.obj                       0      0         4      
+       pre_init.obj                    4      0         0      
+       stkdepth_vars.obj               0      0         4      
+       mpu_init.obj                    2      0         0      
+       startup.obj                     2      0         0      
+    +--+-------------------------------+------+---------+---------+
+       Total:                          5382   48        28     
+                                                               
+       Stack:                          0      0         512    
+       Linker Generated:               0      33        0      
+    +--+-------------------------------+------+---------+---------+
+       Grand Total:                    8100   1341      540    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000024e4 records: 1, size/record: 8, table size: 8
+	.data: load addr=000024c8, load size=00000011 bytes, run addr=20000200, run size=0000001c bytes, compression=lzss
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 000024dc records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                           
+-------   ----                           
+00002191  ADCIntClear                    
+00002081  ADCProcessorTrigger            
+00001da9  ADCSequenceConfigure           
+00002045  ADCSequenceDataGet             
+0000215d  ADCSequenceEnable              
+00001b3d  ADCSequenceStepConfigure       
+00001d55  C$$EXIT                        
+00001fb7  GPIODirModeSet                 
+0000166b  GPIOPadConfigSet               
+00001e45  GPIOPinConfigure               
+0000219b  GPIOPinRead                    
+00002105  GPIOPinTypeADC                 
+00002117  GPIOPinTypeGPIOInput           
+00002099  GPIOPinTypeGPIOOutput          
+00002129  GPIOPinTypePWM                 
+000021a1  GPIOPinWrite                   
+000020c9  PWMClockSet                    
+00001fe1  PWMGenConfigure                
+00002179  PWMGenEnable                   
+0000214d  PWMGenPeriodSet                
+0000213b  PWMOutputState                 
+00002063  PWMPulseWidthSet               
+00002185  ResetISR                       
+UNDEFED   SHT$$INIT_ARRAY$$Base          
+UNDEFED   SHT$$INIT_ARRAY$$Limit         
+0000100d  SysCtlClockFreqSet             
+000021a7  SysCtlDelay                    
+00001f55  SysCtlPeripheralEnable         
+20000200  __STACK_END                    
+00000200  __STACK_SIZE                   
+20000200  __STACK_TOP                    
+000024e4  __TI_CINIT_Base                
+000024ec  __TI_CINIT_Limit               
+000024dc  __TI_Handler_Table_Base        
+000024e4  __TI_Handler_Table_Limit       
+00001bb9  __TI_auto_init                 
+20000200  __TI_cleanup_ptr               
+00001c97  __TI_decompress_lzss           
+0000216b  __TI_decompress_none           
+20000204  __TI_dtors_ptr                 
+20000208  __TI_enable_exit_profile_output
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+00000000  __TI_static_base__             
+00001a31  __aeabi_cdcmpeq                
+00001a31  __aeabi_cdcmple                
+00001ab7  __aeabi_cdrcmple               
+00001c29  __aeabi_d2f                    
+00001ed5  __aeabi_d2iz                   
+00001217  __aeabi_dadd                   
+00001535  __aeabi_ddiv                   
+0000179d  __aeabi_dmul                   
+0000120d  __aeabi_dsub                   
+00001f1d  __aeabi_f2d                    
+00001f89  __aeabi_i2d                    
+00001995  __aeabi_memcpy                 
+00001995  __aeabi_memcpy4                
+00001995  __aeabi_memcpy8                
+00002025  __aeabi_ui2d                   
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+000013c3  __mpu_init                     
+20000000  __stack                        
+000020b1  _args_main                     
+00001d01  _c_int00                       
+2000020c  _lock                          
+000020eb  _nop                           
+000020e3  _register_lock                 
+000020dd  _register_unlock               
+00001bb7  _system_post_cinit             
+000021ad  _system_pre_init               
+20000210  _unlock                        
+00001d59  abort                          
+ffffffff  binit                          
+00001df9  copy_in                        
+000020f1  copysign                       
+000020f1  copysignl                      
+20000214  errno                          
+00001d61  exit                           
+00000000  g_pfnVectors                   
+00000f61  get_distance                   
+00001899  ldexp                          
+00001899  ldexpl                         
+00000bb5  main                           
+20000218  main_func_sp                   
+00001995  memcpy                         
+00000209  pow                            
+00000209  powl                           
+00001899  scalbn                         
+00001899  scalbnl                        
+000013c5  sqrt                           
+000013c5  sqrtl                          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                           
+-------   ----                           
+00000000  __TI_static_base__             
+00000000  g_pfnVectors                   
+00000200  __STACK_SIZE                   
+00000209  pow                            
+00000209  powl                           
+00000bb5  main                           
+00000f61  get_distance                   
+0000100d  SysCtlClockFreqSet             
+0000120d  __aeabi_dsub                   
+00001217  __aeabi_dadd                   
+000013c3  __mpu_init                     
+000013c5  sqrt                           
+000013c5  sqrtl                          
+00001535  __aeabi_ddiv                   
+0000166b  GPIOPadConfigSet               
+0000179d  __aeabi_dmul                   
+00001899  ldexp                          
+00001899  ldexpl                         
+00001899  scalbn                         
+00001899  scalbnl                        
+00001995  __aeabi_memcpy                 
+00001995  __aeabi_memcpy4                
+00001995  __aeabi_memcpy8                
+00001995  memcpy                         
+00001a31  __aeabi_cdcmpeq                
+00001a31  __aeabi_cdcmple                
+00001ab7  __aeabi_cdrcmple               
+00001b3d  ADCSequenceStepConfigure       
+00001bb7  _system_post_cinit             
+00001bb9  __TI_auto_init                 
+00001c29  __aeabi_d2f                    
+00001c97  __TI_decompress_lzss           
+00001d01  _c_int00                       
+00001d55  C$$EXIT                        
+00001d59  abort                          
+00001d61  exit                           
+00001da9  ADCSequenceConfigure           
+00001df9  copy_in                        
+00001e45  GPIOPinConfigure               
+00001ed5  __aeabi_d2iz                   
+00001f1d  __aeabi_f2d                    
+00001f55  SysCtlPeripheralEnable         
+00001f89  __aeabi_i2d                    
+00001fb7  GPIODirModeSet                 
+00001fe1  PWMGenConfigure                
+00002025  __aeabi_ui2d                   
+00002045  ADCSequenceDataGet             
+00002063  PWMPulseWidthSet               
+00002081  ADCProcessorTrigger            
+00002099  GPIOPinTypeGPIOOutput          
+000020b1  _args_main                     
+000020c9  PWMClockSet                    
+000020dd  _register_unlock               
+000020e3  _register_lock                 
+000020eb  _nop                           
+000020f1  copysign                       
+000020f1  copysignl                      
+00002105  GPIOPinTypeADC                 
+00002117  GPIOPinTypeGPIOInput           
+00002129  GPIOPinTypePWM                 
+0000213b  PWMOutputState                 
+0000214d  PWMGenPeriodSet                
+0000215d  ADCSequenceEnable              
+0000216b  __TI_decompress_none           
+00002179  PWMGenEnable                   
+00002185  ResetISR                       
+00002191  ADCIntClear                    
+0000219b  GPIOPinRead                    
+000021a1  GPIOPinWrite                   
+000021a7  SysCtlDelay                    
+000021ad  _system_pre_init               
+000024dc  __TI_Handler_Table_Base        
+000024e4  __TI_CINIT_Base                
+000024e4  __TI_Handler_Table_Limit       
+000024ec  __TI_CINIT_Limit               
+20000000  __stack                        
+20000200  __STACK_END                    
+20000200  __STACK_TOP                    
+20000200  __TI_cleanup_ptr               
+20000204  __TI_dtors_ptr                 
+20000208  __TI_enable_exit_profile_output
+2000020c  _lock                          
+20000210  _unlock                        
+20000214  errno                          
+20000218  main_func_sp                   
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+ffffffff  binit                          
+UNDEFED   SHT$$INIT_ARRAY$$Base          
+UNDEFED   SHT$$INIT_ARRAY$$Limit         
+
+[93 symbols]
